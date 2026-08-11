@@ -1,0 +1,62 @@
+:root {
+  --bg-void: #0b0d12;
+  --panel: #161a23;
+  --line: #2a303d;
+  --amber: #ffb347;
+  --cyan: #6fe3ff;
+  --text-primary: #e8eaed;
+  --text-muted: #8a93a3;
+  --danger: #ff6b6b;
+
+  --font-display: "JetBrains Mono", monospace;
+  --font-body: "Inter", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background-color: var(--bg-void);
+  background-image:
+    radial-gradient(circle at 20% 20%, rgba(111, 227, 255, 0.05), transparent 40%),
+    radial-gradient(circle at 80% 80%, rgba(255, 179, 71, 0.05), transparent 40%);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--amber);
+}
+
+button,
+input {
+  font-family: inherit;
+}
+
+/* Accessible focus state everywhere, amber glow instead of default blue */
+:focus-visible {
+  outline: 2px solid var(--amber);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(255, 179, 71, 0.2);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
